@@ -63,7 +63,7 @@ static const char *launchercmd[] = { "rofi", "-show", "combi", NULL };
 
 static const char *termcmd[]  = { "alacritty", NULL };
 
-static const char *passcmd[]  = { "rofi-gopass", NULL };
+static const char *passcmd[]  = { "rofi-pass", NULL };
 
 static const char *bookmarkcmd[] = { "rofi-buku", NULL };
 
