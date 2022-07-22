@@ -17,8 +17,8 @@ static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const unsigned int colorfultitle  = 1;  /* 0 means title use SchemeTitle and SchemeTitleFloat */
 static const unsigned int colorfultag    = 1;  /* 0 means use SchemeSel for selected tag */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "FiraCode Nerd Font:style:regular:size=12";
+static const char *fonts[]          = { "FiraCode Nerd Font:style:medium:size=12" };
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -42,36 +42,48 @@ static const char col_br_blue[]     = "#7da6ff";
 static const char col_br_magenta[]  = "#bb9af7";
 static const char col_br_cyan[]     = "#0db9d7";
 static const char col_br_white[]    = "#acb0d0";
+static const char black[]           = "#21222C";
+static const char white[]           = "#f8f8f2";
+static const char gray2[]           = "#282a36"; // unfocused window border
+static const char gray3[]           = "#44475a";
+static const char gray4[]           = "#282a36";
+static const char blue[]            = "#bd93f9";  // focused window border
+static const char green[]           = "#50fa7b";
+static const char red[]             = "#ff5555";
+static const char orange[]          = "#ffb86c";
+static const char yellow[]          = "#f1fa8c";
+static const char pink[]            = "#ff79c6";
+static const char col_borderbar[]  = "#21222c"; // inner border
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm]       = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]        = { col_gray4, col_cyan,  col_cyan  },
-    [SchemeTag]        = { col_br_black,    col_bg,    col_black },
-    [SchemeTag1]       = { col_fg,          col_dark,  col_black },
-	[SchemeTag2]       = { col_red,         col_dark,  col_black },
-    [SchemeTag3]       = { col_br_yellow,   col_dark,  col_black },
-    [SchemeTag4]       = { col_br_blue,     col_dark,  col_black },
-    [SchemeTag5]       = { col_br_magenta,  col_dark,  col_black },
-	[SchemeTag6]       = { col_br_cyan,     col_dark,  col_black },
-	[SchemeTag7]       = { col_br_green,    col_dark,  col_black },
-	[SchemeTag8]       = { col_yellow,      col_dark,  col_black },
-	[SchemeTag9]       = { col_br_red,      col_dark,  col_black },
-	[SchemeLayout]     = { col_white,       col_bg,    col_black },
-	[SchemeTitle]      = { col_fg,          col_bg,    col_black },
-	[SchemeTitleFloat] = { col_br_blue,     col_bg,    col_black },
-	[SchemeTitle1]     = { col_fg,          col_bg,    col_black },
-	[SchemeTitle2]     = { col_red,         col_bg,    col_black },
-    [SchemeTitle3]     = { col_br_yellow,   col_bg,    col_black },
-    [SchemeTitle4]     = { col_br_blue,     col_bg,    col_black },
-    [SchemeTitle5]     = { col_br_magenta,  col_bg,    col_black },
-	[SchemeTitle6]     = { col_br_cyan,     col_bg,    col_black },
-	[SchemeTitle7]     = { col_br_green,    col_bg,    col_black },
-	[SchemeTitle8]     = { col_yellow,      col_bg,    col_black },
-	[SchemeTitle9]     = { col_br_red,      col_bg,    col_black },
+	[SchemeNorm]       = { gray3,   black,  gray2},
+	[SchemeSel]        = { gray4,   blue,   blue},
+	[SchemeTitle]      = { white,   black,  black},
+	[SchemeTitleFloat] = { white,   black,  black},
+    [SchemeTag]        = { gray3,   black,  black },
+    [SchemeTag1]       = { blue,    black,  black },
+	[SchemeTag2]       = { red,     black,  black },
+    [SchemeTag3]       = { orange,  black,  black },
+    [SchemeTag4]       = { green,   black,  black },
+    [SchemeTag5]       = { pink,    black,  black },
+	[SchemeTag6]       = { red,     black,  black },
+    [SchemeTag7]       = { orange,  black,  black },
+    [SchemeTag8]       = { green,   black,  black },
+    [SchemeTag9]       = { pink,    black,  black },
+    [SchemeTitle1]     = { blue,    black,  black },
+	[SchemeTitle2]     = { red,     black,  black },
+    [SchemeTitle3]     = { orange,  black,  black },
+    [SchemeTitle4]     = { green,   black,  black },
+    [SchemeTitle5]     = { pink,    black,  black },
+	[SchemeTitle6]     = { red,     black,  black },
+    [SchemeTitle7]     = { orange,  black,  black },
+    [SchemeTitle8]     = { green,   black,  black },
+    [SchemeTitle9]     = { pink,    black,  black },
+	[SchemeLayout]     = { green,   black,  black},
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "" };
 
 static const int tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,
                                   SchemeTag4, SchemeTag5, SchemeTag6,
@@ -86,7 +98,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
